@@ -12,10 +12,14 @@
 @interface Navigation : NSObject
 {}
 
--(void)CheckAddress:(NSString *) Address;
+-(BOOL)CheckAddress:(NSString *) Address;
 
 -(void)ShowMapPositionX:(double)x
               PositionY:(double)y
            LocationName:(NSString *) text;
+
+-(void)ShowDirections:(NSString *) direction
+             Distance:(double) distance
+                 Text:(NSString *) text;
 
 @end

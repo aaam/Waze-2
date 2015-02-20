@@ -8,12 +8,18 @@
 
 #import <Foundation/Foundation.h>
 #import "Device.h"
+#import "User.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         Device *d = [[Device alloc] init];
+        User *u =[[User alloc] init];
         
-        [d ChooseLocation:@"Bhia"];
+        [u RegisterWithName:@"Bily" Nickname:@"Wily" Age:11 Email:@"bilywily@gmail.com" Phone:99889988 Password:@"2221"];
+        
+        [d ChooseLocation:@"Bahia"];
+        
+        [d ChooseRouteAddressFrom:@"Nova Iorque" AddressTo:@"Londres"];
     }
     return 0;
 }

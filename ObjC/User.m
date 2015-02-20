@@ -23,6 +23,8 @@
     _phone = uPhone;
     _pass = uPass;
     
+    NSLog(@"User Registered.");
+    
 }
 
 @end

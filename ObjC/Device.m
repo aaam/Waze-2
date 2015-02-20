@@ -12,8 +12,15 @@
 
 -(void)ChooseLocation:(NSString *)Address{
     
-    Navigation *n = [[Navigation alloc] init];
-    [n CheckAddress:Address];
+    Search *s = [[Search alloc] init];
+    [s FindLocation:Address];
+}
+
+-(void)ChooseRouteAddressFrom:(NSString *) addressFrom
+                    AddressTo:(NSString *) addressTo{
+    
+    Search *s = [[Search alloc] init];
+    [s FindRouteAddressFrom:addressFrom AddressTo:addressTo];
 }
 
 @end

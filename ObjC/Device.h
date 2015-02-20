@@ -7,11 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Navigation.h"
+#import "Search.h"
 
 @interface Device : NSObject{
 }
 
 -(void)ChooseLocation:(NSString *) Address;
+
+-(void)ChooseRouteAddressFrom:(NSString *) addressFrom
+                    AddressTo:(NSString *) addressTo;
 
 @end
