@@ -7,9 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Navigation.h"
 
 @interface Search : NSObject
 {}
 
--(NSArray*)FindLocation:(NSString *) Address;
+-(void)FindLocation:(NSString *) Address;
+
+-(void)FindRouteAddressFrom:(NSString *) addressFrom
+                  AddressTo:(NSString *) addressTo;
 @end
