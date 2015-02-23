@@ -23,6 +23,9 @@
     _phone = uPhone;
     _pass = uPass;
     
+    NSLog(@"Registering user, please wait...");
+    [NSThread sleepForTimeInterval:2.0f];
+    
     NSLog(@"User Registered.");
     
 }

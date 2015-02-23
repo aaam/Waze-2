@@ -19,15 +19,15 @@
     }
     
     NSDictionary *places = @{
-                             @"Nova Iorque" : @[@135.22, @192.21],
-                             @"Imbe" : @[@233.22, @22.77],
-                             @"Porto Alegre" : @[@99.12, @222.12],
-                             @"São Paulo" : @[@133.77, @1.11],
+                             @"Madrid" : @[@135.22, @192.21],
+                             @"Londres" : @[@233.22, @22.77],
+                             @"Canada" : @[@99.12, @222.12],
+                             @"Veneza" : @[@133.77, @1.11],
                              @"Bahia" : @[@43.22, @59.66],
                              };
     
     for(id key in places){
-        if( key == Address ){
+        if( [key isEqualToString:Address] ){
             NSArray *obj = places[key];
             
             [n ShowMapPositionX:[[obj objectAtIndex:0]doubleValue] PositionY:[[obj objectAtIndex:1]doubleValue] LocationName:Address];
@@ -51,24 +51,28 @@
     
     
     NSDictionary *places = @{
-                             @"Nova Iorque" : @{
+                             @"Madrid" : @{
                                         @"Londres": @[
-                                                    @[@"left", @300.00, @"Rua"],
-                                                    @[@"left", @300.00, @"Ave"],
-                                                    @[@"right", @300.00, @"Trave"]
+                                                    @[@"Turn left", @300.00, @"Rua"],
+                                                    @[@"Turn right", @300.00, @"Ave"],
+                                                    @[@"Go straight", @300.00, @"Trave"]
                                                 ]
                                      }
                              };
     
+    NSLog(@"Calculating route from '%@' to '%@'", addressFrom, addressTo);
+    [NSThread sleepForTimeInterval:3.0f];
+    
     for(id key in places){
-        if( key == addressFrom ){
+        if( [key isEqualToString:addressFrom ] ){
             NSDictionary *destinys = places[key];
             
             for(id keyy in destinys){
-                if( keyy == addressTo){
+                if( [keyy isEqualToString:addressTo] ){
                     NSArray *destiny = destinys[keyy];
                     
                     for(NSArray *direction in destiny){
+                        [NSThread sleepForTimeInterval:3.0f];
                         [n ShowDirections:[direction objectAtIndex:0] Distance:[[direction objectAtIndex:1]doubleValue] Text:[direction objectAtIndex:2] ];
                     }
                     

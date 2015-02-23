@@ -12,10 +12,13 @@
 
 -(BOOL)FindFriend:(NSString *) FriendName{
     
-    NSArray *names = @[@"Francisco", @"Jonathan", @"Rafaela", @"Eduardo"];
+    NSLog(@"Searching friend '%@'....", FriendName);
+    [NSThread sleepForTimeInterval:2.0f];
+    
+    NSArray *names = @[@"Francisco", @"Jonathan", @"Rafaela", @"Eduardo", @"Billy"];
     
     for(NSString* obj in names){
-        if( obj == FriendName ){
+        if( [obj isEqualToString:FriendName] ){
             return YES;
         }
     }
@@ -31,11 +34,16 @@
         return NO;
 
     // CHECK IF FRIEND EXISTS AND SEND MESSAGE
-    if( [self FindFriend: FriendName])
+    if( [self FindFriend: FriendName]){
+        NSLog(@"Sending message to '%@'", FriendName);
+        [NSThread sleepForTimeInterval:2.0f];
+        
         return YES;
-    else
+    }
+    else{
+        NSLog(@"Friend not found.");
         return NO;
-
+    }
 }
 
 @end

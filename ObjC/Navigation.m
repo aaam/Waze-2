@@ -11,10 +11,13 @@
 @implementation Navigation
 
 -(BOOL)CheckAddress:(NSString *)Address{
-    NSArray *names = @[@"Nova Iorque", @"Londres", @"Porto Alegre", @"São Paulo", @"Bahia"];
+    NSLog(@"Checking Address '%@'...", Address);
+    [NSThread sleepForTimeInterval:2.0f];
+    
+    NSArray *names = @[@"Madrid", @"Londres", @"Canada", @"Veneza", @"Bahia"];
     
     for(NSString* obj in names){
-        if( obj == Address ){
+        if( [ obj isEqualToString:Address ] ){
             return YES;
         }
     }
@@ -34,6 +37,6 @@
              Distance:(double)distance
                  Text:(NSString *)text{
 
-    NSLog(@"Turn %@ in %f at %@", direction, distance, text);
+    NSLog(@"%@ in %.0f meters at %@", direction, distance, text);
 }
 @end
